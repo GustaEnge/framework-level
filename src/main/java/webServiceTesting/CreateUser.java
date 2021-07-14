@@ -1,6 +1,6 @@
 package webServiceTesting;
 
-import io.restassured.RestAssured;
+import io.restassured.*;
 import io.restassured.specification.RequestSpecification;
 
 public class CreateUser {

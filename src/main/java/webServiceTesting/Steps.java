@@ -1,9 +1,6 @@
 package webServiceTesting;
 
-
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.*;
 
 public class Steps {
 
@@ -15,13 +12,13 @@ public class Steps {
     createUser = new CreateUser();
   }
 
-  @When("^I set name \"([^\"]*)\"$")
+  @When("^I set name (.*)$")
   public void setName(String name) {
     createUser.setName(name);
     this.name = name;
   }
 
-  @When("^I set job \"([^\"]*)\"$")
+  @When("^I set job (.*)$")
   public void setJob(String job) {
   }
 
