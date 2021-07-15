@@ -4,6 +4,8 @@ package seleniumgluecode;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
+import java.util.concurrent.TimeUnit;
+
 public class WebStep {
 
     public Page page;
@@ -40,14 +42,18 @@ public class WebStep {
     }
 
     @When("^I click in calculate price button")
-    public void clickCalculatePriceButton()
+    public void clickCalculatePriceButton() throws InterruptedException
     {
         page.clickButton();
+        TimeUnit.MILLISECONDS.sleep(2000);
+
     }
 
     @Then("^I validate price is (.*)$")
     public void	validatePrice(String price) throws InterruptedException {
         Assert.assertEquals(price, page.getPrice());
+        page.close();
+
     }
 
 
@@ -56,7 +62,4 @@ public class WebStep {
         page.attachFiles(file);
     }
 
-    @And("I go")
-    public void iGo() {
-    }
 }

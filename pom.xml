@@ -11,8 +11,8 @@
         <junit.version>4.13</junit.version>
         <rest-assured.version>4.3.3</rest-assured.version>
         <mockito-all.version>1.10.19</mockito-all.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>13</maven.compiler.source>
+        <maven.compiler.target>13</maven.compiler.target>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
@@ -73,6 +73,30 @@
             <artifactId>rest-assured</artifactId>
             <version>4.4.0</version>
             <scope>compile</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20210307</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.dmfs/httpurlconnection-executor -->
+        <dependency>
+            <groupId>org.dmfs</groupId>
+            <artifactId>httpurlconnection-executor</artifactId>
+            <version>0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.10.2</version>
         </dependency>
 
     </dependencies>

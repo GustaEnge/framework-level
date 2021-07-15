@@ -1,10 +1,11 @@
 package seleniumgluecode;
 
+import io.cucumber.java.After;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import seleniumgluecode.Hook;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,10 +14,14 @@ public class Page {
     private String url = "https://qa-automation-challenge.github.io/sandbox/";
 
     public Page(){
-        driver = Hook.driver;
+        driver = new ChromeDriver();
+        driver.manage().deleteAllCookies();
+        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     public void launchPage(){
+        driver.manage().window().maximize();
         driver.navigate().to(url);
     }
 
@@ -38,16 +43,20 @@ public class Page {
         driver.findElement(By.id("duration")).sendKeys(value);
     }
 
-    public void clickButton(){
+    public void clickButton()throws InterruptedException{
         driver.findElement(By.id("calculate")).click();
+        TimeUnit.MILLISECONDS.sleep(2000);
     }
 
-    public String getPrice(){
+    public String getPrice()  {
         return driver.findElement(By.id("price")).getText();
     }
 
     public void setComments(String comment) {
-        driver.findElement(By.id("comments")).sendKeys(comment);
+        WebElement commentElem = driver.findElement(By.id("comments"));
+        commentElem.clear();
+        commentElem.sendKeys(comment);
+
     }
 
     public void attachFiles(String path) throws Exception {
@@ -56,5 +65,9 @@ public class Page {
         TimeUnit.MILLISECONDS.sleep(500);
         attachButton.sendKeys(path);
 
+    }
+
+    public void close(){
+        driver.close();
     }
 }

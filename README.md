@@ -29,3 +29,16 @@ document to report it.
 
 **Note: The solution should be shared in your own Git repository. Make sure that you keep
 the Git commit history clean**
+
+My Resolution:
+
+## Here is the precondition to run it:
+
+| Step | Description                                                                                              |
+|------|:--------------------------------------------------------------------------------------------------------:|
+| 1    | Clone this project                                                                                       |
+| 2    | Install an IDE and download the chromedriver (Eclipse)                                                   |
+| 3    | Import the project into IDE                                                                              |
+| 4    | Setup the chromedriver in system Environment Variables (named it as: webdriver.chrome.driver)            |
+| 5    | Setup the bat from Maven for example: mvn clean verify -Dxmlfile=TestRunWebAPI.xml           |
+

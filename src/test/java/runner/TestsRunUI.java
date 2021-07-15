@@ -7,11 +7,11 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/features",
+        features = "src/test/java/features/UITest.feature",
         glue= {"seleniumgluecode"},
         plugin = { "pretty", "html:target/cucumber-reports" },
         monochrome = true
 )
 
-public class TestsRun {
+public class TestsRunUI {
 }
