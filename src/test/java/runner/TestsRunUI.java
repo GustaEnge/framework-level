@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         features = "src/test/java/features/UITest.feature",
         glue= {"seleniumgluecode"},
-        plugin = { "pretty", "html:target/cucumber-reports" },
+        plugin = { "pretty", "html:target/reports" },
         monochrome = true
 )
 

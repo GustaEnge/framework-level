@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.OutputStream;
 import java.net.*;
-import java.net.http.*;
+//import java.net.http.*;
 
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -14,26 +14,26 @@ public class Request {
 
     public Request(){ }
 
-    public List<HashMap<String,String>> getURL(String URL) throws Exception {
-
-        HttpClient client =  HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .GET()
-                .header("accept","application/json")
-                .uri(URI.create(URL))
-                .build();
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        //System.out.println(response.body());
-
-        ObjectMapper mapper = new ObjectMapper();
-        HashMap<String,Object> body = mapper.readValue(response.body(), new TypeReference<HashMap<String,Object>>() {});
-        List<HashMap<String,String>> data = (List) body.get("data");
-
-
-
-        return data;
-    }
+//    public List<HashMap<String,String>> getURL(String URL) throws Exception {
+//
+//        HttpClient client =  HttpClient.newHttpClient();
+//        HttpRequest request = HttpRequest.newBuilder()
+//                .GET()
+//                .header("accept","application/json")
+//                .uri(URI.create(URL))
+//                .build();
+//        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+//
+//        //System.out.println(response.body());
+//
+//        ObjectMapper mapper = new ObjectMapper();
+//        HashMap<String,Object> body = mapper.readValue(response.body(), new TypeReference<HashMap<String,Object>>() {});
+//        List<HashMap<String,String>> data = (List) body.get("data");
+//
+//
+//
+//        return data;
+//    }
     public String getURL_2(String URL) throws Exception{
         URL url = new URL(URL);
         HttpURLConnection http = (HttpURLConnection) url.openConnection();

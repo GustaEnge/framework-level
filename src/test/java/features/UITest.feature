@@ -15,4 +15,4 @@
       Examples:
       | Type    | SupportPlan | Duration | Comments | path | ExpectedPrice |
       | Special | Full        | 6        | Testing  |      | 2249.10       |
-      | Regular | Full        | 6        | Testing  |      | 2249.10       |
+      | Regular | Full        | 6        | Testing  |      | 749.70        |
